@@ -6,10 +6,6 @@ from deep_translator import GoogleTranslator
 import time
 import math
 
-# Debug mode
-DEBUG = st.sidebar.checkbox("Debug Mode", False)
-
-# System prompt - modified for AMC GPMC
 system_prompt = """You are an expert on AMC and GPMC regulations, Gujarat tax law, and a compilation of circulars. Provide:
 
 Clear, concise answers with relevant citations from the GPMC Act, AMC regulations, Gujarat tax law, and circulars.
@@ -147,8 +143,8 @@ def generate_response(query: str, context: str, system_prompt: str):
         return "Sorry, there was an error generating the response. Please try again."
 
 # Streamlit UI
-st.title("AMC GPMC Act Assistant")
-st.write("Ask any question about the Gujarat Provincial Municipal Corporations Act and AMC regulations")
+st.title("AI-Powered Citizen Assistance and Information System")
+st.write("Ask any question related to the Gujarat Provincial Municipal Corporations Act and AMC regulations")
 
 # Initialize chat history
 if 'messages' not in st.session_state:
@@ -184,21 +180,3 @@ if prompt:
             st.markdown(response)
             st.session_state.messages.append({"role": "assistant", "content": response})
 
-# Sidebar
-with st.sidebar:
-    st.header("About")
-    st.write("This chatbot provides information about the Gujarat Provincial Municipal Corporations Act and Ahmedabad Municipal Corporation regulations.")
-    st.write("""
-    Features:
-    - Accurate citations from GPMC Act and AMC regulations
-    - Step-by-step guidance on municipal procedures
-    - Information about deadlines and compliance requirements
-    - Support for both English and Gujarati queries
-    """)
-
-    st.header("Important Notes")
-    st.write("""
-    - All responses are based on the latest available AMC regulations and GPMC Act
-    - For official proceedings, please verify information with AMC authorities
-    - This is an AI assistant for guidance purposes only
-    """)
