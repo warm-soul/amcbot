@@ -144,7 +144,7 @@ def generate_response(query: str, context: str, system_prompt: str):
 
 # Streamlit UI
 st.title("AI-Powered Citizen Assistance and Information System")
-st.write("Ask any question related to the Gujarat Provincial Municipal Corporations Act and AMC regulations")
+st.write("Ask any question related to the Gujarat Provincial Municipal Corporations Act")
 
 # Initialize chat history
 if 'messages' not in st.session_state:
@@ -156,7 +156,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Chat input and processing
-prompt = st.chat_input("What would you like to know about AMC regulations or GPMC Act?")
+prompt = st.chat_input("What would you like to know about GPMC Act?")
 if prompt:
     with st.chat_message("user"):
         st.markdown(prompt)
